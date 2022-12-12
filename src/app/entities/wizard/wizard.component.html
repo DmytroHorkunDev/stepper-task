@@ -8,7 +8,10 @@
         [activeStepIndex]="activeStepIndex">
       </app-wizard-steps>
 
-      <app-wizard-controller class="w-75"></app-wizard-controller>
+      <app-wizard-controller
+        (onClickNext)="moveNext()"
+        (onClickBack)="movePrev()"
+        class="w-75"></app-wizard-controller>
     </div>
   </div>
 </div>

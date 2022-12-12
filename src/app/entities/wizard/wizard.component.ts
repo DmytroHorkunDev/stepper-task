@@ -11,4 +11,16 @@ import { MOCK_STEPS } from './data/steps.data';
 export class WizardComponent {
   public readonly steps: IWizardStep[] = MOCK_STEPS
   public activeStepIndex: number = 1;
+
+  public moveNext(): void {
+    if (this.activeStepIndex + 1 >= this.steps.length) return;
+
+    this.activeStepIndex += 1;
+  }
+
+  public movePrev(): void {
+    if (this.activeStepIndex - 1 < 0) return;
+
+    this.activeStepIndex -= 1;
+  }
 }
