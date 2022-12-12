@@ -15,5 +15,5 @@ export const MOCK_STEPS: IWizardStep[] = [
     stepContent: '3',
     title: 'Step 3',
     subTitle: 'You have continued here!'
-  },
+  }
 ];

@@ -1,17 +1,25 @@
 <div class="wrapper">
   <div class="d-flex min-vh-100 align-items-center justify-content-center">
+    <ng-container *ngIf="steps.length && activeStepIndex >= 0 && activeStepIndex <= steps.length - 1; else emptySteps">
+      <div class="d-flex w-50 align-items-center flex-column">
+        <app-wizard-steps
+          class="mb-4"
+          [steps]="steps"
+          [activeStepIndex]="activeStepIndex">
+        </app-wizard-steps>
 
-    <div class="d-flex w-50 align-items-center flex-column">
-      <app-wizard-steps
-        class="mb-4"
-        [steps]="steps"
-        [activeStepIndex]="activeStepIndex">
-      </app-wizard-steps>
+        <app-wizard-controller
+          [isPrevButtonDisabled]="activeStepIndex === 0"
+          [isNextButtonDisabled]="activeStepIndex === steps.length - 1"
+          (onClickNext)="moveNext()"
+          (onClickBack)="movePrev()"
+          class="w-75"></app-wizard-controller>
+      </div>
+    </ng-container>
 
-      <app-wizard-controller
-        (onClickNext)="moveNext()"
-        (onClickBack)="movePrev()"
-        class="w-75"></app-wizard-controller>
-    </div>
+    <ng-template #emptySteps>
+      <h2 class="text-gray text-center px-3">Something went wrong, please check the number of steps passed and active
+        step value</h2>
+    </ng-template>
   </div>
 </div>

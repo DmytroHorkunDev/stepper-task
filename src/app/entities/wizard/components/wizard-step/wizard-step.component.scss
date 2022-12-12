@@ -1,8 +1,11 @@
+@import '~bootstrap/scss/bootstrap-utilities';
+
 :host {
   .wrapper {
-    min-width: 50px;
-    width: 50px;
-    height: 50px;
+    min-width: 35px;
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
     border-color: var(--bs-teal) !important;
     background-color: var(--bs-white);
     color: var(--bs-teal);
@@ -10,6 +13,13 @@
     &.active {
       background-color: var(--bs-teal);
       color: var(--bs-white);
+    }
+
+    @include media-breakpoint-up(md) {
+      min-width: 50px;
+      width: 50px;
+      height: 50px;
+      font-size: 1rem;
     }
   }
 }
