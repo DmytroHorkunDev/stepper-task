@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  width: 100%;
+
+  .wrapper {
+    .steps-row {
+      z-index: 10;
+    }
+
+    .decorated-line {
+      height: 1px;
+      background-color: var(--bs-teal);
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<div class="wrapper ">
+  <div class="position-relative">
+    <div class="mb-4 steps-row d-flex position-relative flex-nowrap justify-content-center">
+      <div *ngFor="let step of steps; let i = index" class="px-3">
+        <app-wizard-step [step]="step.stepContent + ''" [isActive]="i === activeStepIndex"></app-wizard-step>
+      </div>
+    </div>
+
+    <div class="decorated-line w-100 position-absolute top-50 translate-middle-y"></div>
+  </div>
+
+  <div class="text-gray text-center">
+    <h1>{{ steps[activeStepIndex].title }}</h1>
+    <h5>{{ steps[activeStepIndex].subTitle }}</h5>
+  </div>
+
+</div>

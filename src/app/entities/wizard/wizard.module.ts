@@ -6,12 +6,16 @@ import { WizardRoutingModule } from './wizard-routing.module';
 
 import { WizardComponent } from './wizard.component';
 import { WizardControllerComponent } from './components/wizard-controller/wizard-controller.component';
+import { WizardStepsComponent } from './components/wizard-steps/wizard-steps.component';
+import { WizardStepComponent } from './components/wizard-step/wizard-step.component';
 
 
 @NgModule({
   declarations: [
     WizardComponent,
-    WizardControllerComponent
+    WizardControllerComponent,
+    WizardStepsComponent,
+    WizardStepComponent
   ],
   imports: [
     CommonModule,
