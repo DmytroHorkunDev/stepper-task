@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <button
+    (click)="onClickBtn()"
+    [disabled]="isDisabledButton"
+    [ngClass]="
+    {
+      'p-3': buttonSize === buttonSizes.Medium
+    }"
+    class="rounded w-100 border-0 {{buttonStyle}}"
+    [type]="type"
+  >
+    <span class="text-uppercase text-white">{{ content }}</span>
+  </button>
+</div>
